@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
+import { nameInputActionCreator, submitSignupActionCreator } from '../actions/actions';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
+    const dispatch = useDispatch();
+    const auth = useSelector(state => state.auth);
+
+    const submit = (e) => {
+        e.preventDefault();
+        const user = {
+            name: auth.name,
+            email: auth.email,
+            password: auth.password
+        }
+        dispatch(submitSignupActionCreator(user));
+        // navitage(/) ** Fill in route for main budget page
+    }
 
     return(
         <div>
             <h1>Signup</h1>
-            <form>
+            <form onSubmit={submit}>
                 <label>Name</label>
-                <input/>
+                <input type = 'name' placeholder='Enter Name' onChange={(e) => dispatch(nameInputActionCreator(e.target.value))}/>
                 <label>Email</label>
-                <input type ='email'/>
+                <input type ='email' placeholder='Enter Email' onChange={(e) => dispatch(emailInputActionCreator(e.target.value))}/>
                 <label>Password</label>
-                <input type='password'/>
+                <input type='password' placeholder='Enter Password' onChange={(e) => dispatch(passwordInputActionCreator(e.target.value))}/>
                 <button type='submit'>Sign up</button>
             </form>
         </div>
-
     )
 }
 
