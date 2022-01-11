@@ -27,6 +27,11 @@ export const passwordInputActionCreator = (input) => ({
   payload: input
 });
 
+export const updateBudgetActionCreator = () => ({
+  type: types.UPDATE_BUDGET,
+});
+
+
 export const submitSignupActionCreator = (user) => {
   return (dispatch) => {
     fetch('/user/signup', {
@@ -42,6 +47,32 @@ export const submitSignupActionCreator = (user) => {
     }).then(res => {
       console.log(res);
       dispatch({type: types.SUBMIT_SIGNUP})
+    })
+    .catch(err => console.log(err))
+  }
+}
+
+export const submitBudgetActionCreator = (total) => {
+  return (dispatch) => {
+    fetch('endpoint', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        housing: total.housing,
+      health: total.health,
+      auto: total.auto,
+      education: total.education,
+      loans: total.loans,
+      savings: total.savings,
+      investment: total.investment,
+      charity: total.charity,
+      misc: total.misc
+      })
+    }).then(res => {
+      console.log(res);
+    dispatch({type: types.SUBMIT_BUDGET})
     })
     .catch(err => console.log(err))
   }
@@ -65,3 +96,57 @@ export const submitLoginActionCreator = (user) => {
     .catch(err => console.log(err))
   }
 }
+
+
+
+// Budget Actions
+
+export const monthlyIncomeActionCreator = (input) => ({
+  type: types.INCOME_INPUT,
+  payload: input
+});
+
+export const housingInputActionCreator = (input) => ({
+  type: types.HOUSING_INPUT,
+  payload: input
+});
+
+export const healthInputActionCreator = (input) => ({
+  type: types.HEALTH_INPUT,
+  payload: input
+});
+
+export const autoInputActionCreator = (input) => ({
+  type: types.AUTO_INPUT,
+  payload: input
+});
+
+export const educationInputActionCreator = (input) => ({
+  type: types.EDUCATION_INPUT,
+  payload: input
+});
+
+export const loansInputActionCreator = (input) => ({
+  type: types.LOANS_INPUT,
+  payload: input
+});
+
+export const savingsInputActionCreator = (input) => ({
+  type: types.SAVINGS_INPUT,
+  payload: input
+});
+
+export const investInputActionCreator = (input) => ({
+  type: types.INVEST_INPUT,
+  payload: input
+});
+
+export const charInputActionCreator = (input) => ({
+  type: types.CHAR_INPUT,
+  payload: input
+});
+
+export const miscInputActionCreator = (input) => ({
+  type: types.MISC_INPUT,
+  payload: input
+});
