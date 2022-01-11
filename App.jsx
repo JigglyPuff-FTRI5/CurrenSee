@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Login from './client/components/Login.jsx'
+import Signup from './client/components/Signup.jsx'
+import Mainpage from './client/components/Mainpage.jsx'
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +11,13 @@ class App extends Component {
   render() {
     return (
      <div>
-       <h1>Hello worldddddd</h1> 
+       <Router>
+        <Routes>
+          <Route path= '/' element = {<Mainpage/>}></Route>
+          <Route path ='/signup' element = {<Signup/>}></Route>
+          <Route path ='/login' element = {<Login/>}></Route>
+        </Routes>
+       </Router>
        </div>
     );
   }
