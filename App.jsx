@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Login from './client/components/Login.jsx'
 import Signup from './client/components/Signup.jsx'
 import Mainpage from './client/components/Mainpage.jsx'
+import './styles.scss';
 
 class App extends Component {
   constructor(props) {
