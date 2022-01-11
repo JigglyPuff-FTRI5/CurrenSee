@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom'
 function Mainpage(){
 
     return(
-        <div class='mainpage'>
-            <h1>Curren$ee</h1>
+        <div className='mainpage'>
+            <h1 className = 'title'>Curren$ee</h1>
             <Link to='/login'>
             <button>Login</button>
             </Link>
