@@ -39,8 +39,8 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "babel-loader": "^8.2.3",
     "bcrypt": "^5.0.1",
+    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "express": "^4.17.2",
     "pg": "^8.7.1",
