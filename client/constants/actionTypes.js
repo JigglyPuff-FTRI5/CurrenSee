@@ -4,3 +4,16 @@ export const EMAIL_INPUT = 'EMAIL_INPUT';
 export const PASSWORD_INPUT = 'PASSWORD_INPUT';
 export const SUBMIT_SIGNUP = 'SUBMIT_SIGNUP';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
+
+export const HOUSING_INPUT = 'HOUSING_INPUT'
+export const HEALTH_INPUT = 'HEALTH_INPUT'
+export const AUTO_INPUT = 'AUTO_INPUT'
+export const EDUCATION_INPUT = 'EDUCATION_INPUT'
+export const LOANS_INPUT = 'LOANS_INPUT'
+export const SAVINGS_INPUT = 'SAVINGS_INPUT'
+export const INVEST_INPUT = 'INVEST_INPUT'
+export const CHAR_INPUT = 'CHAR_INPUT'
+export const MISC_INPUT = 'MISC_INPUT'
+export const INCOME_INPUT = 'INCOME_INPUT'
+export const SUBMIT_BUDGET = 'SUBMIT_BUDGET'
+export const UPDATE_BUDGET = 'UPDATE_BUDGET'

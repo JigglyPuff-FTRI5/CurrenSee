@@ -5,6 +5,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 function SignUp() {
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
+    const navigate = useNavigate();
 
     const submit = (e) => {
         e.preventDefault();
@@ -14,7 +15,7 @@ function SignUp() {
             password: auth.password
         }
         dispatch(submitSignupActionCreator(user));
-        // navitage(/) ** Fill in route for main budget page
+        navitage('/dashboard') 
     }
 
     return(
