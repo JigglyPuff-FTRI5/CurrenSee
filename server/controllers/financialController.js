@@ -7,7 +7,8 @@ financialController.getFinancials = async (req, res, next) => {
   SELECT * FROM financials 
   WHERE user_id = ${user_id} 
   AND created_date = ${created_date}`;
-
+  const availableData = await db.query(queryString);
+  
 
 
 };
