@@ -3,13 +3,15 @@ const financialController = require('../controllers/financialController.js');
 
 const router = express.Router();
 
-// //GET request to /compliments?tag=1&user=1
-// router.get('/', complimentController.getCompliments, (req, res) => {
-//   return res
-//     .set('Content-Type', 'application/json')
-//     .status(200)
-//     .json({ complimentsList: res.locals.complimentsList });
-// });
+//GET request to /financial
+router.get('/', financialController.getFinancials, (req, res) => {
+  res.set('Content-Type', 'application/json').status(200).json({ financialsList: res.locals.financialsList });
+});
+
+//POST request to /financial
+router.post('/', financialController.postFinancials, (req, res) => {
+  res.status(200).send('Data successfully saved!')
+});
 
 
 module.exports = router;
