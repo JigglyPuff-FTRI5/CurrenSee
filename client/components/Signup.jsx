@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nameInputActionCreator, submitSignupActionCreator } from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function SignUp() {
             password: auth.password
         }
         dispatch(submitSignupActionCreator(user));
-        navitage('/dashboard') 
+        navigate('/dashboard') 
     }
 
     return(
