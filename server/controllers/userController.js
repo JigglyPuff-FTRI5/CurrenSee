@@ -1,5 +1,5 @@
 const db = require('../models/dataModel.js');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const userController = {};
 
 userController.loginUser = async (req, res, next) => {
