@@ -6,6 +6,12 @@ userController.loginUser = async (req, res, next) => {
 
   //destructure email/password from req body
   const { email, password } = req.body;
+
+//check if email or password are missing
+  if (!email || !password) {
+    return res.status(400).send('Invalid email or password. Please try again. [Dev - Invalid entrie(s)]')
+
+  }
   
   //Query members table for matching email 
   const queryString = `
@@ -39,6 +45,10 @@ userController.signupUser = async (req, res, next) => {
 
 //destructure name, email, and password from req body
 const {name, email, password} = req.body;
+
+if (!name || !email || !password) {
+  return res.status(400).send('One of the fields are invalid. Please try again. [Dev - Invalid entrie(s)]')
+}
 
 //hash password
 const hashPassword = bcrypt.hashSync(password, 10);

@@ -12,9 +12,11 @@ return res
 
 //Signup Post Request - w/o OAuth
 router.post('/signup', userController.signupUser, (req, res) => {
-  return res
-      .set('Content-Type', 'application/json')
-      .status(200).json({user_id : res.locals.user_id, name : res.locals.name})
+  // return res
+  //     .set('Content-Type', 'application/json')
+      //.status(200).json({user_id : res.locals.user_id, name : res.locals.name})
+      // console.log(res.location())
+      return res.redirect('http://localhost:8080/dashboard');
   });
 
 //Signup Post Request - w/o OAuth
