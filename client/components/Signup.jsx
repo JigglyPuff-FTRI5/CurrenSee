@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { nameInputActionCreator, submitSignupActionCreator } from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 
 function SignUp() {
     const dispatch = useDispatch();
