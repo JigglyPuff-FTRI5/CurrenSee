@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { nameInputActionCreator, submitSignupActionCreator } from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
     const dispatch = useDispatch();
-    const auth = useSelector(state => state.auth);
+    const data = useSelector(state => state.data);
+    const navigate = useNavigate();
 
     const submit = (e) => {
         e.preventDefault();
         const user = {
-            name: auth.name,
-            email: auth.email,
-            password: auth.password
+            name: data.name,
+            email: data.email,
+            password: data.password
         }
         dispatch(submitSignupActionCreator(user));
-        // navitage(/) ** Fill in route for main budget page
+        navigate('/dashboard') 
     }
 
     return(
