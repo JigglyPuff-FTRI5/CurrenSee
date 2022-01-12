@@ -44,9 +44,11 @@ export const submitSignupActionCreator = (user) => {
         email: user.email,
         password: user.password
       })
-    }).then(res => {
-      console.log(res);
-      dispatch({type: types.SUBMIT_SIGNUP})
+    }).then(res => (res.json()))
+    .then(response => {
+      console.log(response);
+      const payload = response;
+      dispatch({type: types.SUBMIT_SIGNUP, payload: payload})
     })
     .catch(err => console.log(err))
   }
@@ -89,10 +91,13 @@ export const submitLoginActionCreator = (user) => {
         email: user.email,
         password: user.password
       })
-    }).then(res => {
-      console.log(res);
-      dispatch({type: types.SUBMIT_LOGIN})
+    }).then(res => (res.json()))
+      .then(response => {
+      const payload = response;
+      dispatch({type: types.SUBMIT_LOGIN, payload: payload})
     })
+      
+    
     .catch(err => console.log(err))
   }
 }

@@ -16,6 +16,7 @@ app.use('/user', userRouter);
 //use financialRouter
 app.use('/financial', financeRouter);
 
+
 //404 error with message
 app.use('*', (req, res) => {
   res.status(404).send('EMOTIONAL DAMAGE')
