@@ -24,14 +24,14 @@ const dataReducer = (state = initialState, action) => {
         name: '',
         email: '',
         password: '',
-        isLoggedIn: true
+        isLoggedIn: action.payload.isLoggedIn
       }
 
       case types.SUBMIT_LOGIN :
         return {...state, 
           email: '',
           password: '',
-          isLoggedIn: true
+          isLoggedIn: action.payload.isLoggedIn
         }
     default:
       return state;

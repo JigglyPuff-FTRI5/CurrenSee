@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { emailInputActionCreator, passwordInputActionCreator, submitLoginActionCreator} from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 function Login(){
     const dispatch = useDispatch();
     const data = useSelector(state => state.data);
-    const navigate = useNavigate();
+    const isLoggedIn = useSelector(state => state.data.isLoggedIn);
+    //const navigate = useNavigate();
 
     const submit = (e) => {
         e.preventDefault();
@@ -15,9 +16,12 @@ function Login(){
             password: data.password
         }
         dispatch(submitLoginActionCreator(user));
-        navigate('/dashboard') 
+        // navigate('/dashboard') 
     }
- 
+
+    if (isLoggedIn) {
+        return (<Navigate to='/dashboard' />)}
+        
     return(
         <div>
             <h1>Login</h1>

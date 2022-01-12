@@ -7,16 +7,14 @@ const router = express.Router();
 router.post('/login', userController.loginUser, (req, res) => {
 return res
     .set('Content-Type', 'application/json')
-    .status(200).json({user_id : res.locals.user_id, name : res.locals.name})
+    .status(200).json({email : res.locals.email, name : res.locals.name, isLoggedIn: res.locals.isLoggedIn})
 });
 
 //Signup Post Request - w/o OAuth
 router.post('/signup', userController.signupUser, (req, res) => {
-  // return res
-  //     .set('Content-Type', 'application/json')
-      //.status(200).json({user_id : res.locals.user_id, name : res.locals.name})
-      // console.log(res.location())
-      return res.redirect('http://localhost:8080/dashboard');
+  return res
+      .set('Content-Type', 'application/json')
+      .status(200).json({email : res.locals.email, name : res.locals.name, isLoggedIn: res.locals.isLoggedIn})
   });
 
 //Signup Post Request - w/o OAuth
