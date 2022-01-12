@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const userRouter = require('./routes/userRoutes.js')
-const financialRouter = require('./routes/financialRoutes.js')
+const financeRouter = require('./routes/financialRoutes.js');
 
 // Body parsing, query string parsing
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 //use userRouter
 app.use('/user', userRouter);
 //use financialRouter
-app.use('/financial', financialRouter);
+app.use('/financial', financeRouter);
 
 
 //404 error with message

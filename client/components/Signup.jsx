@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { nameInputActionCreator, submitSignupActionCreator, passwordInputActionCreator, emailInputActionCreator } from '../actions/actions';
+import { nameInputActionCreator, submitSignupActionCreator, emailInputActionCreator, passwordInputActionCreator } from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
