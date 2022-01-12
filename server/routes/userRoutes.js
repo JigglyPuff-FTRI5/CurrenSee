@@ -7,14 +7,14 @@ const router = express.Router();
 router.post('/login', userController.loginUser, (req, res) => {
 return res
     .set('Content-Type', 'application/json')
-    .status(200).send('hello - login')
+    .status(200).json({user_id : res.locals.user_id, name : res.locals.name})
 });
 
 //Signup Post Request - w/o OAuth
-router.post('/signup', (req, res) => {
+router.post('/signup', userController.signupUser, (req, res) => {
   return res
       .set('Content-Type', 'application/json')
-      .status(200).send('hello - signup')
+      .status(200).json({user_id : res.locals.user_id, name : res.locals.name})
   });
 
 //Signup Post Request - w/o OAuth

@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const userRouter = require('./routes/userRoutes.js')
-const financialRouter = require('./routes/financialRoutes.js')
+//const financialRouter = require('./routes/financialRoutes.js')
 
 // Body parsing, query string parsing
 app.use(express.json());
