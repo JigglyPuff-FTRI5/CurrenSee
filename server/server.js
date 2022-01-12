@@ -66,6 +66,6 @@ app.use((err, req, res, next) => {
 });
 
 // Set app to listen to port 3000
-app.listen(3000, () => {
+module.exports = app.listen(3000, () => {
   console.log('Listening on PORT 3000...');
 });
