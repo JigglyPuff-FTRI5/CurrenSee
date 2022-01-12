@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import { emailInputActionCreator, passwordInputActionCreator, loginActionCreator, nameInputActionCreator } from '../actions/actions';
+import { useNavigate } from 'react-router-dom';
+import { emailInputActionCreator, passwordInputActionCreator, submitLoginActionCreator} from '../actions/actions';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 function Login(){
     const dispatch = useDispatch();
-    const auth = useSelector(state => state.auth);
+    const data = useSelector(state => state.data);
     const navigate = useNavigate();
 
     const submit = (e) => {
         e.preventDefault();
         const user = {
-            email: auth.email,
-            password: auth.password
+            email: data.email,
+            password: data.password
         }
         dispatch(submitLoginActionCreator(user));
-        navitage('/dashboard') 
+        navigate('/dashboard') 
     }
  
     return(
