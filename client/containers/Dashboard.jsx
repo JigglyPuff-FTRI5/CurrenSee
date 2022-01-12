@@ -14,11 +14,16 @@ import {
   updateBudgetActionCreator
 } from '../actions/actions'
 import { useDispatch, useSelector } from 'react-redux';
+import {Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js'
+import { Pie } from 'react-chartjs-2';
+ChartJS.register(ArcElement, Tooltip, Legend)
+
 
 
 function Dashboard() {
   const dispatch = useDispatch();
   const budget = useSelector(state => state.budget.budget)
+
   
   const submit = (e) => {
     e.preventDefault();
@@ -36,12 +41,50 @@ function Dashboard() {
     dispatch(submitBudgetActionCreator(total));
   }
 
+  const pieData = {
+    labels : ['Housing', 'Health', 'Auto', 'Education', 'Loans', 'Savings', 'Investments', 'Charity', 'Misc', 'Leftover Budget'],
+    datasets: [{
+      label: 'Budget Breakdown',
+      data: [Number(useSelector(state => state.budget.housing)),
+             Number(useSelector(state => state.budget.health)),
+             Number(useSelector(state => state.budget.auto)), 
+             Number(useSelector(state => state.budget.education)), 
+             Number(useSelector(state => state.budget.loans)), 
+             Number(useSelector(state => state.budget.savings)), 
+             Number(useSelector(state => state.budget.investment)), 
+             Number(useSelector(state => state.budget.charity)), 
+             Number(useSelector(state => state.budget.misc)),
+             Number(useSelector(state => state.budget.budget))],
+      backgroundColor: [
+      'rgba(8, 61, 119, 0.2)',
+      'rgba(235, 235, 211, 0.2)',
+      'rgba(218, 65, 103, 0.2)',
+      'rgba(244, 211, 94, 0.2)',
+      'rgba(247, 135, 100, 0.2)',
+      'rgba(93, 183, 222, 0.2)',
+      'rgba(159, 159, 237, 0.2)',
+      'rgba(255, 202, 233, 0.2)',
+      'rgba(88, 139, 139, 0.2)',
+      'rgba(55, 150, 52, 0.2)',
+    ],
+    borderColor: [
+      'rgba(8, 61, 119, 1)',
+      'rgba(235, 235, 211, 1)',
+      'rgba(218, 65, 103, 1)',
+      'rgba(244, 211, 94, 1)',
+      'rgba(247, 135, 100, 1)',
+      'rgba(93, 183, 222, 1)',
+      'rgba(159, 159, 237, 1)',
+      'rgba(255, 202, 233, 1)',
+      'rgba(88, 139, 139, 1)',
+      'rgba(55, 150, 52, 1)',
+    ]
+    }],
+    
+  }
+
   return (
     <div>
-      
-      
-      
-     
       <div className="monthly-income">
         <h1>Monthly Income</h1>
         <input type="number" onChange={(e) => {
@@ -135,6 +178,10 @@ function Dashboard() {
         </div>
       </div>
       
+
+
+      <Pie className='pieChart' data={pieData} width='25vw'/>
+
     </div>
     
   );
