@@ -19,13 +19,19 @@
     "url": "https://github.com/JigglyPuff-FTRI5/CurrenSee/issues"
   },
   "homepage": "https://github.com/JigglyPuff-FTRI5/CurrenSee#readme",
+  "jest": {
+    "globalSetup": "./jest-setup.js",
+    "globalTeardown": "./jest-teardown.js"
+  },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.8",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "concurrently": "^7.0.0",
     "css-loader": "^6.5.1",
     "file-loader": "^6.2.0",
@@ -37,13 +43,17 @@
     "redux-devtools-extension": "^2.13.9",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.65.0",
+    "supertest": "^6.2.1",
+    "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/runtime": "^7.16.7",
     "axios": "^0.24.0",
-    "babel-loader": "^8.2.3",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.0.0-beta.0",
     "bcrypt": "^5.0.1",
     "chart.js": "^3.7.0",
     "cross-env": "^7.0.3",
@@ -53,15 +63,14 @@
     "express": "^4.17.2",
     "jest-puppeteer": "^6.0.3",
     "pg": "^8.7.1",
-    "react": "^17.0.2",
+    "react": "^16.14.0",
     "react-chartjs-2": "^4.0.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "react-test-renderer": "^16.14.0",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
-    "sass": "^1.47.0",
-    "supertest": "^6.2.1"
+    "sass": "^1.47.0"
   }
 }
