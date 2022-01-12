@@ -6,11 +6,6 @@ userController.loginUser = async (req, res, next) => {
 
   //destructure email/password from req body
   const { email, password } = req.body;
-<<<<<<< HEAD
-  //bcrypt hash email and password
-  // const hashEmail = bcrypt.hashSync(email, 10)
-  // const hashPassword = bcrypt.hashSync(password, 10)
-=======
   
   //Query members table for matching email 
   const queryString = `
@@ -37,7 +32,6 @@ userController.loginUser = async (req, res, next) => {
   res.locals.user_id = email;
   res.locals.name = userName;
 
->>>>>>> dev
 next();
 }
 
