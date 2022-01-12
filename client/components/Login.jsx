@@ -32,6 +32,9 @@ function Login(){
                 <input type='password' placeholder='Enter Password' onChange={(e) => dispatch(passwordInputActionCreator(e.target.value))}/>
                 <button type='submit'>Log in</button>
             </form>
+        <div>
+            <a href='/user/auth/google'>Authenticate with Google</a>
+        </div>
         </div>
     )
 }
